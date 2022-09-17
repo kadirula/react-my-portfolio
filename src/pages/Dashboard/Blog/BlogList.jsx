@@ -2,33 +2,34 @@ import AdminSidebar from '../../../components/Dashboard/AdminSidebar';
 
 const BlogList = () => {
 
-    const data = [{
-        msg: 'Hello',
-        num: 1
-    }, {
-        msg: 'Hey',
-        num: 2
-    }, {
-        msg: 'Hi',
-        num: 3
-    }, {
-        msg: 'Bye',
-        num: 4
-    }, {
-        msg: 'Welcome',
-        num: 5
-    }, {
-        msg: 'Thanks',
-        num: 6
-    }]
+    const data = [
+        {
+            author: 'Kadir Ula',
+            title: 'Blog - 1',
+            createdAt: '12.01.2022'
+        },
+        {
+            author: 'Hello',
+            title: 'Blog - 2',
+            createdAt: '12.02.2022'
+        },
 
-    const columns = [{
-        Header: 'Message',
-        accessor: 'msg'
-    }, {
-        Header: 'Number',
-        accessor: 'num'
-    }]
+    ]
+
+    const columns = [
+        {
+            Header: 'Author',
+            accessor: 'author'
+        },
+        {
+            Header: 'Title',
+            accessor: 'title'
+        },
+        {
+            Header: 'CreatedAt',
+            accessor: 'create'
+        },
+    ]
     return (
 
         <div className='section'>
@@ -38,12 +39,35 @@ const BlogList = () => {
                         <AdminSidebar />
                     </div>
                     <div className="col-md-8">
-                        {/* <ReactTable
-                            data={data}
-                            columns={columns}
-                            defaultPageSize={2}
-                            pageSizeOptions={[2, 4, 6]}
-                        /> */}
+                        <div className="table-responsive">
+                            <table className='blog-table table  table-striped table-dark table-hover table-bordered'>
+                                <thead>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Title</th>
+                                        <th>CreatedAt</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        data.map((item, index) => (
+                                            <tr key={index}>
+                                                <td>{item.author}</td>
+                                                <td>{item.title}</td>
+                                                <td>{item.createdAt}</td>
+                                                <td>
+                                                    <a href="#">Güncelle</a>
+                                                    <a href="#">Sil</a>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+.auth-form{
+    &__item{
+        margin-bottom: 20px;
+    }
+    &__desc{
+        font-size: 14px;
+        text-align: center;
+        a{
+            color: #0679a8;
+            margin-left: 10px;
+            transform: all .3s;
+            &:hover{
+                color: darken(#0679a8, 10%);
+            }
+        }
+    }
+}

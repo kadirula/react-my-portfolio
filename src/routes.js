@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Admin from './pages/Dashboard/Admin';
 import BlogList from './pages/Dashboard/Blog/BlogList';
 import BlogAdded from './pages/Dashboard/Blog/BlogAdded';
+import Register from './pages/Register';
 
 export const routes = [
     {
@@ -25,6 +26,11 @@ export const routes = [
     {
         path: '/login',
         element: Login,
+        auth: false
+    },
+    {
+        path: '/register',
+        element: Register,
         auth: false
     },
     {

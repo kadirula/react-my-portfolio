@@ -1,11 +1,12 @@
 import AuthForm from "../components/AuthForm"
-const index = () => {
+
+const Register = () => {
   return (
     <section className='section'>
       <div className="container">
         <div className="row">
           <div className="col-md-8 offset-md-2">
-            <AuthForm page='login' />
+            <AuthForm page='register' />
           </div>
         </div>
       </div>
@@ -13,4 +14,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Register
