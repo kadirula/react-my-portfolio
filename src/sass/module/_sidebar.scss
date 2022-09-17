@@ -1,0 +1,33 @@
+.sidebar{
+    &__item{
+
+    }
+    &__text{
+        font-size: 20px;
+        margin-right: 50px;
+        margin-bottom: 15px;
+        display: block;
+        padding: 7px 0;
+        border-top: 2px solid #555;
+        border-bottom: 2px solid #555;
+        color: #0679a8 !important;
+        svg{
+            margin-right: 8px;
+        }
+    }
+    &__sub{
+        padding-left: 20px;
+        &-item{
+            display: block;
+            padding-bottom: 12px;
+            color: #fff;
+            transition: all .3s;
+            svg{
+                margin-right: 8px;
+            }
+            &:hover{
+                color: #0679a8;
+            }
+        }
+    }
+}
