@@ -6,11 +6,11 @@
         font-size: 14px;
         text-align: center;
         a{
-            color: #0679a8;
+            color: $color-theme;
             margin-left: 10px;
             transform: all .3s;
             &:hover{
-                color: darken(#0679a8, 10%);
+                color: darken($color-theme, 10%);
             }
         }
     }

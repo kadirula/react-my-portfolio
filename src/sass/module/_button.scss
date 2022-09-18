@@ -2,11 +2,11 @@
     padding: 10px 20px;
     border-radius: 8px;
     &--blue{
-        background: #0679a8;
-        color: #fff;
+        background: $color-theme;
+        color: $color-white;
         transition: all .3s;
         &:hover{
-            background: darken(#0679a8, 10%);
+            background: darken($color-theme, 10%);
         }
     }
 }

@@ -1,14 +1,33 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { app, auth } from "../../firebase";
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { login } from "../../reducers/authReducer";
+import { useSelector, useDispatch } from 'react-redux' 
+import { useNavigate } from 'react-router-dom'
 
 const AuthForm = ({ page }) => {
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const loginHandle = () => {
-
+    const loginHandle = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                dispatch(login( JSON.stringify(user)));
+                navigate('/')
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // toast.error(errorMessage);
+            });
     }
 
     const registerHandle = () => {
@@ -16,7 +35,7 @@ const AuthForm = ({ page }) => {
     }
 
     return (
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={loginHandle}>
             <div className="auth-form__item">
                 <label className="form-label">E-mail</label>
                 <input
@@ -38,9 +57,9 @@ const AuthForm = ({ page }) => {
             <div className="auth-form__item">
                 {
                     page === 'login' ?
-                        <button className="button button--blue d-block w-100">Giriş Yap</button>
+                        <button type='submit' className="button button--blue d-block w-100">Giriş Yap</button>
                         :
-                        <button className="button button--blue d-block w-100">Kayıt Ol</button>
+                        <button type='submit' className="button button--blue d-block w-100">Kayıt Ol</button>
                 }
             </div>
             <div className="auth-form__item">

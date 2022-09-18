@@ -1,4 +1,4 @@
-import AuthForm from "../components/AuthForm"
+import AuthForm from "../components/Form/AuthForm"
 const index = () => {
   return (
     <section className='section'>

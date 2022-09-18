@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import { useSelector } from "react-redux";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+
 import { ToastContainer } from 'react-toastify';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -10,31 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 function App() {
 
-  const [text, setText] = useState('');
-
-  const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-      ['link', 'image'],
-      ['clean']
-    ],
-  };
-
-  const formats = [
-    'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image'
-  ];
-
-
-  const handleAddBlog = () => {
-    console.log(text);
-  }
-
-  const { user } = useSelector(state => state.auth);
+  const user = useSelector((state) => JSON.parse(state.auth.user));
 
   return (
     <div className='bg-dark min-vh-100'>
@@ -59,10 +34,7 @@ function App() {
         </Routes>
       </Router>
 
-      {/* <ReactQuill theme="snow" value={text} onChange={setText}
-        modules={modules}
-        formats={formats}>
-      </ReactQuill>
+      {/* 
       <button onClick={handleAddBlog}>Added</button>
 
       <hr/>

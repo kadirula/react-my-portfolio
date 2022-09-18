@@ -36,11 +36,11 @@ export const routes = [
     {
         path: '/admin/blog-list',
         element: BlogList,
-        auth: false
+        auth: true
     },
     {
         path: '/admin/blog-add',
         element: BlogAdded,
-        auth: false
+        auth: true
     },
 ]

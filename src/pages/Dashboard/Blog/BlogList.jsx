@@ -1,4 +1,5 @@
 import AdminSidebar from '../../../components/Dashboard/AdminSidebar';
+import { FaEdit, FaTimes } from 'react-icons/fa';
 
 const BlogList = () => {
 
@@ -56,9 +57,9 @@ const BlogList = () => {
                                                 <td>{item.author}</td>
                                                 <td>{item.title}</td>
                                                 <td>{item.createdAt}</td>
-                                                <td>
-                                                    <a href="#">Güncelle</a>
-                                                    <a href="#">Sil</a>
+                                                <td align='center'>
+                                                    <a href="#" className='btn  btn-sm btn-success mx-2'><FaEdit /></a>
+                                                    <a href="#" className='btn btn-sm btn-danger mx-2'><FaTimes /></a>
                                                 </td>
                                             </tr>
                                         ))

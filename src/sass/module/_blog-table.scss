@@ -1,12 +1,12 @@
 .blog-table{
-    color: #fff;
+    color: $color-white;
     tr{
         th, td{
-            border: 1px solid #0679a8;
+            border: 1px solid $color-theme;
         }
     }
     th{
-        background-color: #0679a8;
+        background-color: $color-theme;
     }
     
 }

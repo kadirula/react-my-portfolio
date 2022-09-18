@@ -18,6 +18,12 @@ const AdminSidebar = () => {
           <Link to='/admin/blog-add' className='sidebar__sub-item'>
             <FaPlus /> Blog Ekle
           </Link>
+          <Link to='/admin/blog-category-list' className='sidebar__sub-item'>
+            <FaListOl /> Blog Kategori Listesi
+          </Link>
+          <Link to='/admin/blog-category-add' className='sidebar__sub-item'>
+            <FaPlus /> Blog Kategorisi Ekle
+          </Link>
         </div>
       </div>
       <div className="sidebar__item">

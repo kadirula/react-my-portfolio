@@ -1,6 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getFirestore, getDocs, collection, setDoc, addDoc } from "firebase/firestore";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
+import { login  } from './reducers/authReducer';
+
 
 
 const firebaseConfig = {
@@ -17,16 +21,29 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            toast.error(errorMessage)
-        });
+const db = getFirestore(app);
+
+export const getAllCategory = async () => {
+    const querySnapshot = await getDocs(collection(db, "category"));
+
+    const categories = [];
+
+    querySnapshot.forEach((doc) => {
+        categories.push({ id: doc.id, title: doc.data().title });
+    });
+
+    return categories;
 }
+
+export const addBlog = async (data) => {
+
+    // console.log(data);
+    const result = await addDoc(collection(db, "post"), data);
+
+    console.log(result);
+
+    // console.log(result);
+}
+
+
+export { app, auth }
