@@ -13,17 +13,7 @@
   }
   
   body {
-    margin: 0;
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
     font-size: 16px;
-  }
-
-  .bg-dark{
-    background: $color-bg;
-    color: $color-white;
-  }
-  
-  .section{
-    padding-top: 40px;
-    padding-bottom: 40px;
   }

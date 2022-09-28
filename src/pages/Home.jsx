@@ -1,11 +1,9 @@
-const index = () => {
+const Home = () => {
   return (
-    <section className='section'>
-      <div className="container">
-        ANASAYFA
-      </div>
-    </section>
+    <div className="container">
+      ANASAYFA
+    </div>
   )
 }
 
-export default index
+export default Home

@@ -1,53 +1,36 @@
 import { NavLink } from 'react-router-dom'
-import { FaHome, FaProjectDiagram, FaFileSignature, FaSignInAlt } from 'react-icons/fa'
-import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { logout } from '../reducers/authReducer';
+import { FaHome, FaReadme, FaAtlas, FaRegEnvelope } from 'react-icons/fa'
+import logo from '../assets/logo.png';
 
 const Header = () => {
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    
-    
-    const user = useSelector((state) => state.auth.user);
-
-
-    const handleLogout = () => {
-        dispatch(logout());
-        navigate('/');
-    }
-
     return (
         <header className='header'>
-            <div className="header__wrapper container">
-                <NavLink to='/' className="header__logo">
-                    KADIR
-                </NavLink>
-                <nav className='header__menu'>
-                    <NavLink to='/' end className={({ isActive }) => (isActive ? 'active-link' : '')}>
-                        <FaHome /> Anasayfa
-                    </NavLink>
-                    <NavLink to='/blog' className={({ isActive }) => (isActive ? 'active-link' : '')}>
-                        <FaFileSignature /> Yazılarım
-                    </NavLink>
-                    <NavLink to='/project' className={({ isActive }) => (isActive ? 'active-link' : '')}>
-                        <FaProjectDiagram /> Projelerim
-                    </NavLink>
-                    {
-                        !user ?
-                            <NavLink to='/login' className={({ isActive }) => (isActive ? 'active-link' : '')}>
-                                <FaSignInAlt /> Giriş Yap
-                            </NavLink>
-                            :
-                            <button onClick={handleLogout} className={({ isActive }) => (isActive ? 'active-link' : '')}>
-                                <FaSignInAlt /> Çıkış Yap
-                            </button>
-                    }
-
-                </nav>
+            <div className="container">
+                <div className="header__wrapper">
+                    <nav className="header__menu header__menu--left">
+                        <NavLink to='/' end className={({ isActive }) => (isActive ? 'active ' : '') + 'header__menu-item'}>
+                            <FaHome className='header__menu-icon' /> Anasayfa
+                        </NavLink>
+                        <NavLink to='/project' end className={({ isActive }) => (isActive ? 'active ' : '') + 'header__menu-item'}>
+                            <FaAtlas className='header__menu-icon' /> Projelerim
+                        </NavLink>
+                    </nav>
+                    <div className="header__logo">
+                        <NavLink to='/'>
+                            <img src={logo} className='img-fluid' alt="Logo" />
+                        </NavLink>
+                    </div>
+                    <nav className="header__menu header__menu--right">
+                        <NavLink to='/blog' end className={({ isActive }) => (isActive ? 'active ' : '') + 'header__menu-item'}>
+                            <FaReadme className='header__menu-icon' /> Blog
+                        </NavLink>
+                        <NavLink to='/contact' end className={({ isActive }) => (isActive ? 'active ' : '') + 'header__menu-item'}>
+                            <FaRegEnvelope className='header__menu-icon' /> İletişim
+                        </NavLink>
+                    </nav>
+                </div>
             </div>
-
         </header>
     )
 }
