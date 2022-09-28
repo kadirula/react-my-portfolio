@@ -1,7 +1,9 @@
+import HomeBanner from "../components/HomeBanner"
+
 const Home = () => {
   return (
     <div className="container">
-      ANASAYFA
+      <HomeBanner />
     </div>
   )
 }
