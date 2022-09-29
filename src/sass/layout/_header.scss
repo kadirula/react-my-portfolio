@@ -10,17 +10,17 @@
         align-items: center;
         &-item{
             padding: 10px 30px;
-            color: $text-color;
+            color: $color-text;
             font-size: 22px;
             font-weight: 600;
             display: flex;
             align-items: flex-end;
             transition: all .4s;
             &:hover{
-                color: $theme-color;
+                color: $color-theme;
             }
             &.active{
-                color: $theme-color;
+                color: $color-theme;
             }
         }
         &-icon{

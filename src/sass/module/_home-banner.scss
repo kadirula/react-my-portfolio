@@ -5,13 +5,13 @@
     height: 600px;
     display: flex;
     align-items: center;
-    border-top: 2px solid $theme-color;
+    border-top: 2px solid $color-theme;
     &__content{
         max-width: 600px;
     }
     &__title{
         font-size: 30px;
-        color: $theme-color;
+        color: $color-theme;
         font-weight: 600;
         margin-bottom: 15px;
         text-shadow: $text-shadow;
@@ -21,7 +21,7 @@
         font-weight: 600;
         padding-bottom: 10px;
         display: inline-block;
-        border-bottom: 2px solid $theme-color;
+        border-bottom: 2px solid $color-theme;
         margin-bottom: 25px;
     }
     &__desc{
@@ -45,13 +45,13 @@
             transition: all .5s;
             &:hover{
                 top: -5px;
-                background: $theme-color;
+                background: $color-theme;
                 
             }
         }
         &-icon{
             font-size: 25px;
-            color: $text-color;
+            color: $color-text;
         }
     }
 }
