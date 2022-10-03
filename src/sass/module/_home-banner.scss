@@ -38,7 +38,8 @@
             height: 60px;
             line-height: 60px;
             text-align: center;
-            background: $social-item-bg-color;
+            // background: $social-item-bg-color;
+            background: lighten($color-bg, 4%);
             margin-right: 25px;
             box-shadow: $social-item-box-shadow;
             border-radius: 5px;
