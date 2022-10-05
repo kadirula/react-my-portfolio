@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import TabPanel from "./TabPanel";
 import TimeLine from "../TimeLine/TimeLine";
+import SkillCard from "../SkillCard/SkillCard";
 
 const CustomTabs = () => {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -20,9 +21,26 @@ const CustomTabs = () => {
             desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
         }];
 
-        const workExperience = [
-            {}
-        ]
+    const workExperiences = [
+        {
+            title: 'Daynex İnternet Teknolojileri A.Ş.',
+            subtitle: 'Frontend Developer',
+            date: '07/2021 - 02/2022',
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
+        },
+        {
+            title: 'Talebe Yayın Dağıtım Ar-Ge Lmt. Şti',
+            subtitle: 'Frontend Developer',
+            date: '07/2019 - 10/2020',
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
+        },
+        {
+            title: 'Arne Yazılım',
+            subtitle: 'Staj',
+            date: '07/2018 - 10/2018',
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
+        }
+    ];
 
     const idGenerator = (index) => {
         return {
@@ -50,20 +68,25 @@ const CustomTabs = () => {
             </div>
             <div className="tabs__panel">
                 <TabPanel value={selectedTab} index={0}>
-
-
+                    <SkillCard />
                 </TabPanel>
                 <TabPanel value={selectedTab} index={1}>
                     <div className="row">
                         {educations.map((item, index) => (
                             <div className="col-md-6" key={index}>
-                                <TimeLine educationItem={item} />
+                                <TimeLine data={item} />
                             </div>
                         ))}
                     </div>
                 </TabPanel>
                 <TabPanel value={selectedTab} index={2}>
-                    Item Three
+                    <div className="row">
+                        {workExperiences.map((item, index) => (
+                            <div className="col-md-6" key={index}>
+                                <TimeLine data={item} />
+                            </div>
+                        ))}
+                    </div>
                 </TabPanel>
             </div>
         </div>
