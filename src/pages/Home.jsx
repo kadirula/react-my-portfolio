@@ -1,13 +1,20 @@
-import HomeBanner from "../components/HomeBanner";
-import ProjectSection from "../components/ProjectSection";
-import ResumeSection from "../components/ResumeSection";
+import HomeBanner from "../components/Section/HomeBanner";
+import ProjectSection from "../components/Section/ProjectSection";
+import ResumeSection from "../components/Section/ResumeSection";
 
 const Home = () => {
   return (
     <div className="container">
-      <HomeBanner />
-      <ProjectSection />
-      <ResumeSection />
+      <section className='section section--border' >
+        <HomeBanner />
+      </section>
+      <section className='section section--border' >
+        <ProjectSection />
+      </section>
+      <section className='section section--border' >
+        <ResumeSection />
+      </section>
+      
     </div>
   )
 }

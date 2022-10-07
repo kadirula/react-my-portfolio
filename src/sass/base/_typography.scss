@@ -4,4 +4,9 @@
     font-weight: 700;
     letter-spacing: 5px;
     text-shadow: -13px -13px 7px #323438;
+    &__desc{
+        font-size: 18px;
+        color: $color-text;
+        padding-top: 20px;
+    }
 }

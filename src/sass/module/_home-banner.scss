@@ -1,12 +1,11 @@
 .home-banner{
-    background-image: url(../../assets/main-banner.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    border-top: 2px solid $color-theme;
+    padding: 50px 0;
     &__content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__info{
         max-width: 600px;
     }
     &__title{
@@ -27,32 +26,5 @@
     &__desc{
         line-height: 1.6;
         font-size: 18px;
-    }
-    &__social{
-        display: flex;
-        margin-top: 30px;
-        &-item{
-            position: relative;
-            top: 0;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            text-align: center;
-            // background: $social-item-bg-color;
-            background: lighten($color-bg, 4%);
-            margin-right: 25px;
-            box-shadow: $social-item-box-shadow;
-            border-radius: 5px;
-            transition: all .5s;
-            &:hover{
-                top: -5px;
-                background: $color-theme;
-                
-            }
-        }
-        &-icon{
-            font-size: 25px;
-            color: $color-text;
-        }
     }
 }
