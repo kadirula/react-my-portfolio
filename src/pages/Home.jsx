@@ -5,7 +5,7 @@ import ResumeSection from "../components/Section/ResumeSection";
 const Home = () => {
   return (
     <div className="container">
-      <section className='section section--border' >
+      <section className='section--border' >
         <HomeBanner />
       </section>
       <section className='section section--border' >
