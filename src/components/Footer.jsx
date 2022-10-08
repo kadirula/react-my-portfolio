@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             <div className="row">
                 <p className="footer__copyright text-center">
-                    &copy; {new Date().getFullYear()} Tüm Hakları <span>Kadir Ula</span> ' ya aittir.
+                    &copy; {new Date().getFullYear()} - Tüm Hakları <span>Kadir Ula</span> ' ya aittir.
                 </p>
             </div>
         </footer>

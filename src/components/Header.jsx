@@ -1,11 +1,24 @@
 import { NavLink } from 'react-router-dom'
 import { FaHome, FaReadme, FaAtlas, FaRegEnvelope } from 'react-icons/fa'
 import logo from '../assets/logo.png';
+import { useState } from 'react';
 
 const Header = () => {
 
+    const [isSticky, setIsSticky] = useState(false);
+
+
+    window.onscroll = () => {
+        if (window.pageYOffset > 100) {
+            setIsSticky(true)
+        }
+        else{
+            setIsSticky(false)
+        }
+    }
+
     return (
-        <header className='header'>
+        <header className={`header ${isSticky && 'header--sticky'}`}>
             <div className="container">
                 <div className="header__wrapper">
                     <nav className="header__menu header__menu--left">
