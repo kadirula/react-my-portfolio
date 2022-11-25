@@ -1,14 +1,17 @@
-import projectData from '../../api/projectData';
+import projectData from '../../data/projectData';
 import ProjectCard from "../ProjectCard";
 import Heading from "../Heading";
+import { Link } from 'react-router-dom';
 
 const ProjectSection = () => {
 
   return (
-    <div>
+    <>
       <div className="row mb-5">
         <div className="col-md-12">
-          <Heading title='PROJELERİM' />
+          <Link to='/project'>
+            <Heading title='PROJELERİM' />
+          </Link>
         </div>
       </div>
       <div className="row">
@@ -27,7 +30,7 @@ const ProjectSection = () => {
         }
 
       </div>
-    </div>
+    </>
   )
 }
 

@@ -11,6 +11,9 @@
 # production
 /build
 
+#psd files
+/project-psd
+
 # misc
 .DS_Store
 .env.local

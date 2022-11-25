@@ -1,4 +1,4 @@
-import skills from '../api/skillData';
+import skills from '../data/skillData';
 
 const SkillCard = () => {
 

@@ -4,8 +4,8 @@ import Tab from '@mui/material/Tab';
 import TabPanel from "./TabPanel";
 import TimeLine from "../TimeLine";
 import SkillCard from "../SkillCard";
-import educations from '../../api/educationData';
-import workExperiences from '../../api/workExperienceData';
+import educations from '../../data/educationData';
+import workExperiences from '../../data/workExperienceData';
 
 const CustomTabs = () => {
     const [selectedTab, setSelectedTab] = useState(0);
