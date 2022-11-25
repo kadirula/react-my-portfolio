@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { FaLink, FaGithub } from 'react-icons/fa';
 
 const ProjectCard = ({ project }) => {
+
+    
+
     return (
         <div className="project-card">
             <div className="project-card__image">
@@ -11,7 +14,7 @@ const ProjectCard = ({ project }) => {
                 <div className="project-card__label">
                     {
                         project.tech.map((item, index) => (
-                            <span>{item.name}</span>
+                            <span key={index}>{item.name}</span>
                         ))
                     }
                 </div>

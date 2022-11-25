@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import { FaLink, FaGithub } from 'react-icons/fa';
 import projectData from '../../api/projectData';
 import ProjectCard from "../ProjectCard";
+import Heading from "../Heading";
 
 const ProjectSection = () => {
 
@@ -9,9 +8,7 @@ const ProjectSection = () => {
     <div>
       <div className="row mb-5">
         <div className="col-md-12">
-          <div className="text-center">
-            <h3 className="title">PROJELERİM</h3>
-          </div>
+          <Heading title='PROJELERİM' />
         </div>
       </div>
       <div className="row">
@@ -19,7 +16,7 @@ const ProjectSection = () => {
           projectData.map((project, index) => {
             if (project.homeShow) {
               return (
-                <div className="col-md-6 col-lg-4" key={project.id}>
+                <div className="col-md-6 col-lg-4" key={index}>
                   <ProjectCard project={project} />
                 </div>
               )

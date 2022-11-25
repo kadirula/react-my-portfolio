@@ -1,4 +1,5 @@
 import CustomTabs from "../Tabs/CustomTabs"
+import Heading from "../Heading";
 
 
 const ResumeSection = () => {
@@ -6,9 +7,7 @@ const ResumeSection = () => {
     return (
         <div className="row">
             <div className="col-md-12 mb-5">
-                <div className="text-center">
-                    <h3 className="title">ÖZGEÇMİŞİM</h3>
-                </div>
+                <Heading title='ÖZGEÇMİŞİM' />
             </div>
             <div className="col-md-12">
                 <CustomTabs />

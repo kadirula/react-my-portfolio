@@ -1,10 +1,32 @@
 .header {
     padding: 10px 0;
     position: relative;
-    transition: all .4s;
+    z-index: 900;
     @include breakpoints(xs){
         padding: 10px 30px;
     }
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: -200%;
+        z-index: -1;
+        background-color: #000;
+        transition: top 0.5s;
+    }
+    &.sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: max-content;
+    }
+    &.sticky::before {
+        top: 0;
+    }
+    
     &__wrapper {
         display: flex;
         align-items: center;
@@ -12,6 +34,7 @@
         @include media(max-w, 980px){
             // justify-content: flex-start;
             justify-content: space-between;
+            position: relative;
         }
     }
     &__menu {
@@ -36,41 +59,83 @@
             font-size: 22px;
             font-weight: 600;
             display: flex;
+            cursor: pointer;
             align-items: flex-end;
             transition: all 0.4s;
             &:hover {
                 color: $color-theme;
             }
-            &.active {
-                color: $color-theme;
-            }
+            // &.active {
+            //     color: $color-theme;
+            // }
         }
         &-icon {
             font-size: 25px;
             margin-right: 15px;
         }
     }
+    &__mobile-menu{
+        position: absolute;
+        top: -300%;
+        left: 0;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        z-index: -1;
+        transition: all .6s;
+        &.show{
+            top: 0;
+            padding: 80px 0 50px;
+        }
+        &-item{
+            margin: 10px 0;
+            color: $color-text;
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            &:hover{
+                color: $color-theme;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $color-theme;
+            }
+        }
+    }
     &__logo {
         margin: 0 50px;
+        cursor: pointer;
         @include media(max-w, 980px){
             margin-left: 0;
         }
         img {
-            max-width: 100px;
+            max-width: 75px;
             @include breakpoints(md){
-                max-width: 70px;
+                max-width: 50px;
             }
         }
          
     }
     &__hamburger{
         display: none !important;
+        background-color: transparent;
+        border: 0;
         @include media(max-w, 980px){
             display: block !important;
         }
         &-icon{
-            font-size: 25px;
-            color: $color-text;
+            font-size: 28px;
+            color: $color-theme;
         }
         
     }

@@ -44,7 +44,7 @@ const CustomTabs = () => {
                 <TabPanel value={selectedTab} index={1}>
                     <div className="row">
                         {educations.map((item, index) => (
-                            <div className="col-md-6" key={index}>
+                            <div className="col-md-12 col-lg-6" key={index}>
                                 <TimeLine data={item} />
                             </div>
                         ))}
@@ -53,7 +53,7 @@ const CustomTabs = () => {
                 <TabPanel value={selectedTab} index={2}>
                     <div className="row">
                         {workExperiences.map((item, index) => (
-                            <div className="col-md-6" key={index}>
+                            <div className="col-md-12 col-lg-6" key={index}>
                                 <TimeLine data={item} />
                             </div>
                         ))}

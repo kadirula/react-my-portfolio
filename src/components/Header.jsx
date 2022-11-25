@@ -1,93 +1,66 @@
 import { NavLink } from 'react-router-dom'
-import { FaHome, FaReadme, FaAtlas, FaRegEnvelope, FaBars } from 'react-icons/fa'
+import { FaHome, FaReadme, FaAtlas, FaRegEnvelope, FaBars, FaTimes } from 'react-icons/fa'
 import logo from '../assets/logo.png';
-import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { createTheme } from "@mui/material/styles";
+import React, { useEffect, useState } from 'react';
+import { Link } from "react-scroll";
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [sticky, setSticky] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
 
-    const open = Boolean(anchorEl);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                setSticky(true);
+            }
+            else {
+                setSticky(false)
+            }
+        });
+    }, [])
 
     return (
-        <header className='header'>
+        <header className={`header ${sticky ? 'sticky' : ''}`}>
             <div className="container">
                 <div className="header__wrapper">
                     <nav className="header__menu header__menu--left">
-                        <NavLink to='/' end className='header__menu-item'>
+                        <Link className='header__menu-item' activeClass="active" smooth spy to="home" duration={200}>
                             <FaHome className='header__menu-icon' /> Anasayfa
-                        </NavLink>
-                        <NavLink to='/project' end className='header__menu-item'>
+                        </Link>
+                        <Link className='header__menu-item' activeClass="active" smooth spy to="project" duration={200}>
                             <FaAtlas className='header__menu-icon' /> Projelerim
-                        </NavLink>
+                        </Link>
                     </nav>
                     <div className="header__logo">
-                        <NavLink to='/'>
+                        <Link activeClass="active" smooth spy to="home" duration={200}>
                             <img src={logo} className='img-fluid' alt="Logo" />
-                        </NavLink>
+                        </Link>
                     </div>
                     <nav className="header__menu header__menu--right">
-                        <NavLink to='/blog' end className='header__menu-item'>
-                            <FaReadme className='header__menu-icon' /> Blog
-                        </NavLink>
-                        <NavLink to='/contact' end className='header__menu-item'>
+                        <Link className='header__menu-item' activeClass="active" smooth spy to="resume" duration={200}>
+                            <FaReadme className='header__menu-icon' /> Özgeçmişim
+                        </Link>
+                        <Link className='header__menu-item' activeClass="active" smooth spy to="contact" duration={200}>
                             <FaRegEnvelope className='header__menu-icon' /> İletişim
-                        </NavLink>
+                        </Link>
                     </nav>
-                    <Button
-                        className='header__hamburger'
-                        id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
-                    >
-                        <FaBars className='header__hamburger-icon' />
-                    </Button>
-                    <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                        }}
-                    >
-                        <MenuItem onClick={handleClose}>
-                            <NavLink to='/' end>
-                                <FaHome /> Anasayfa
-                            </NavLink>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <NavLink to='/project' end>
-                                <FaAtlas /> Projelerim
-                            </NavLink>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <NavLink to='/blog' end>
-                                <FaReadme /> Blog
-                            </NavLink>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <NavLink to='/contact' end>
-                                <FaRegEnvelope /> İletişim
-                            </NavLink>
-                        </MenuItem>
-                    </Menu>
+
+                    <button className='header__hamburger' onClick={() => setIsMobile(!isMobile)}>
+                        {
+                            isMobile ?
+                                <FaTimes className='header__hamburger-icon' />
+                                :
+                                <FaBars className='header__hamburger-icon' />
+                        }
+
+                    </button>
                 </div>
             </div>
+
+            <MobileMenu isMobile={isMobile} />
+
         </header>
     )
 }

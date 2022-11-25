@@ -9,20 +9,22 @@ function App() {
     <div>
       <Router>
         <Header />
-        <Routes>
-          {
-            routes.map(route => (
-              <Route
-                path={route.path}
-                element={
-                  <route.element />
-                }
-              />
-            ))}
-        </Routes>
-        <Footer />
+        <div className='container'>
+          <Routes>
+            {
+              routes.map(route => (
+                <Route
+                  path={route.path}
+                  element={
+                    <route.element />
+                  }
+                />
+              ))}
+          </Routes>
+          <Footer />
+        </div>
       </Router>
-      
+
     </div>
   );
 }

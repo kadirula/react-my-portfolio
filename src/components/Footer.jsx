@@ -1,38 +1,80 @@
 import { FaRegEnvelopeOpen, FaLinkedinIn, FaGithub, FaMediumM, FaBehance } from 'react-icons/fa';
+import Heading from "./Heading";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+
+    const socialItemAnimate = {
+        offscreen: { x: 30, opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                duration: 0.5
+            }
+        }
+    }
+
     return (
-        <footer className='footer container'>
+        <footer className='footer' id='contact'>
             <div className="row">
                 <div className="col-md-12">
-                    <div className="text-center">
-                        <h3 className="title">BİRLİKTE ÇALIŞALIM</h3>
-                        <p className="title__desc">
-                            Mail adresimden veya sosyal medya kanallarımdan benimle iletişime geçebilirsiniz
-                        </p>
-                    </div>
+                    <Heading
+                        title='BİRLİKTE ÇALIŞALIM'
+                        subTitle='Mail adresimden veya sosyal medya kanallarımdan benimle iletişime geçebilirsiniz'
+                    />
                 </div>
             </div>
             <div className="row my-4">
                 <div className="col-md-12">
                     <div className="footer__contact">
-                        <div className="social-box justify-content-center">
-                            <a href='mailto:kadirula17@gmail.com' className="social-box__item">
+                        <motion.div
+                            className="social-box justify-content-center"
+                            initial={"offscreen"}
+                            whileInView={"onscreen"}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ staggerChildren: 0.3 }}
+                        >
+                            <motion.a
+                                href='mailto:kadirula17@gmail.com'
+                                className="social-box__item"
+                                variants={socialItemAnimate}
+                            >
                                 <FaRegEnvelopeOpen className='social-box__icon' />
-                            </a>
-                            <a href='https://www.linkedin.com/in/kadir-ula/' target='_blank' className="social-box__item">
+                            </motion.a>
+                            <motion.a
+                                href='https://www.linkedin.com/in/kadir-ula/'
+                                target='_blank'
+                                className="social-box__item"
+                                variants={socialItemAnimate}
+                            >
                                 <FaLinkedinIn className='social-box__icon' />
-                            </a>
-                            <a href='https://github.com/kadirula' target='_blank' className="social-box__item">
+                            </motion.a>
+                            <motion.a
+                                href='https://github.com/kadirula'
+                                target='_blank'
+                                className="social-box__item"
+                                variants={socialItemAnimate}
+                            >
                                 <FaGithub className='social-box__icon' />
-                            </a>
-                            <a href='https://medium.com/@kadirula17' target='_blank' className="social-box__item">
+                            </motion.a>
+                            <motion.a
+                                href='https://medium.com/@kadirula17'
+                                target='_blank'
+                                className="social-box__item"
+                                variants={socialItemAnimate}
+                            >
                                 <FaMediumM className='social-box__icon' />
-                            </a>
-                            <a href='/' className="social-box__item">
+                            </motion.a>
+                            <motion.a
+                                href='/'
+                                className="social-box__item"
+                                variants={socialItemAnimate}
+                            >
                                 <FaBehance className='social-box__icon' />
-                            </a>
-                        </div>
+                            </motion.a>
+                        </motion.div>
 
                     </div>
                 </div>
