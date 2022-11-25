@@ -1,0 +1,14 @@
+.search-form{
+    input{
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 6px;
+        background: $color-bg;
+        border: 2px solid lighten($color-bg, 10%);
+        box-shadow: $project-card-box-shadow;
+        color: $color-text;
+        &:focus{
+            outline: none;
+        }
+    }
+}

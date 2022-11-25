@@ -1,5 +1,7 @@
 import Home from '../pages/Home';
 import Project from '../pages/Project';
+import NotFound from '../pages/NotFound';
+import Blog from '../pages/Blog';
 
 export const routes = [
     {
@@ -12,4 +14,14 @@ export const routes = [
         element: Project,
         auth: false
     },
+    {
+        path: '/blog',
+        element: Blog,
+        auth: false
+    },
+    {
+        path: '*',
+        element: NotFound,
+        auth: false
+    }
 ]

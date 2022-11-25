@@ -1,6 +1,9 @@
 .social-box {
     display: flex;
     align-items: center;
+    @include breakpoints(xs){
+        justify-content: center;
+    }
     &__item {
         position: relative;
         top: 0;

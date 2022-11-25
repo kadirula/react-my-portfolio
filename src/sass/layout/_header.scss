@@ -1,22 +1,35 @@
 .header {
     padding: 10px 0;
+    position: relative;
     transition: all .4s;
-    &--sticky {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        background: darken($color-bg, 8%);
+    @include breakpoints(xs){
+        padding: 10px 30px;
     }
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
+        @include media(max-w, 980px){
+            // justify-content: flex-start;
+            justify-content: space-between;
+        }
     }
     &__menu {
         display: flex;
         align-items: center;
+        @include media(max-w, 980px){
+            display: none;
+        }
+        &--left{
+            @include breakpoints(sm){
+                order:1
+            } 
+        }
+        &--right{
+            @include breakpoints(sm){
+                order:2
+            } 
+        }
         &-item {
             padding: 10px 30px;
             color: $color-text;
@@ -39,8 +52,29 @@
     }
     &__logo {
         margin: 0 50px;
+        @include media(max-w, 980px){
+            margin-left: 0;
+        }
         img {
             max-width: 100px;
+            @include breakpoints(md){
+                max-width: 70px;
+            }
         }
+         
+    }
+    &__hamburger{
+        display: none !important;
+        @include media(max-w, 980px){
+            display: block !important;
+        }
+        &-icon{
+            font-size: 25px;
+            color: $color-text;
+        }
+        
+    }
+    .MuiPaper-root{
+        background-color: $color-theme;
     }
 }

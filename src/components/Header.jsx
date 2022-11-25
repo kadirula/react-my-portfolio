@@ -1,24 +1,28 @@
 import { NavLink } from 'react-router-dom'
-import { FaHome, FaReadme, FaAtlas, FaRegEnvelope } from 'react-icons/fa'
+import { FaHome, FaReadme, FaAtlas, FaRegEnvelope, FaBars } from 'react-icons/fa'
 import logo from '../assets/logo.png';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { createTheme } from "@mui/material/styles";
 
 const Header = () => {
 
-    const [isSticky, setIsSticky] = useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
 
+    const open = Boolean(anchorEl);
 
-    window.onscroll = () => {
-        if (window.pageYOffset > 100) {
-            setIsSticky(true)
-        }
-        else{
-            setIsSticky(false)
-        }
-    }
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
-        <header className={`header ${isSticky && 'header--sticky'}`}>
+        <header className='header'>
             <div className="container">
                 <div className="header__wrapper">
                     <nav className="header__menu header__menu--left">
@@ -42,6 +46,46 @@ const Header = () => {
                             <FaRegEnvelope className='header__menu-icon' /> İletişim
                         </NavLink>
                     </nav>
+                    <Button
+                        className='header__hamburger'
+                        id="basic-button"
+                        aria-controls={open ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick}
+                    >
+                        <FaBars className='header__hamburger-icon' />
+                    </Button>
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}>
+                            <NavLink to='/' end>
+                                <FaHome /> Anasayfa
+                            </NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <NavLink to='/project' end>
+                                <FaAtlas /> Projelerim
+                            </NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <NavLink to='/blog' end>
+                                <FaReadme /> Blog
+                            </NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <NavLink to='/contact' end>
+                                <FaRegEnvelope /> İletişim
+                            </NavLink>
+                        </MenuItem>
+                    </Menu>
                 </div>
             </div>
         </header>

@@ -8,6 +8,10 @@
         cursor: pointer;
         width: 100%;
         transition: all .8s;
+        @include breakpoints(xs){
+            max-width: 200px;
+            margin: 0 auto;
+        }
         &:hover{
             filter: hue-rotate(240deg);
             transform: scale(1.3);

@@ -1,0 +1,103 @@
+$breakpoints-value: (
+    "xs": 600px,
+    "sm": 900px,
+    "md": 1199px,
+    "lg": 1200px,
+    "xl": 1800px,
+);
+// Parametre olarak verdiğimiz ifade $breakpoints-value içerisinde varsa ona göre media işlemi gerçekleşiyor. Aşağıda örneği mevcut
+@mixin breakpoints($breakpoint) {
+    @if $breakpoint == xs { // max 600px
+        @media only screen and (max-width: map-get($breakpoints-value, "xs")) {
+            @content;
+        }
+    }
+    @if $breakpoint == sm { // max 900px
+        @media only screen and (max-width: map-get($breakpoints-value, "sm")) {
+            @content;
+        }
+    }
+    @if $breakpoint == md { // max 1199px
+        @media only screen and (max-width: map-get($breakpoints-value, "md")) {
+            @content;
+        }
+    }
+    @if $breakpoint == lg { // min 1200px
+        @media only screen and (min-width: map-get($breakpoints-value, "lg")) {
+            @content;
+        }
+    }
+    @if $breakpoint == xl { // min 1800px
+        @media only screen and (min-width: map-get($breakpoints-value, "xl")) {
+            @content;
+        }
+    }
+}
+
+/* 
+1 veya 2 parametre vererek kullanabiliyoruz. 1 değer verirsek verdiğimiz değere kadar işleme alır. 
+2 değer verirsek verdiğimiz değerler arasında işleme alır. Aşağıda örneği mevcut
+*/
+@mixin customMediaQuery($args...) {
+    @if length($args) == 1 {
+        @media only screen and (max-width: nth($args,1)) {
+            @content;
+        }
+    }
+
+    @if length($args) == 2 {
+        @media only screen and (min-width: nth($args,1)) and (max-width: nth($args,2)) {
+            @content;
+        }
+    }
+}
+
+
+// min-width veya max-width olduğunu belirtip kaç piksele kadar olmasını belirtip kullanabiliyoruz. Aşağıda örneği mevcut
+@mixin media($width-text, $width) {
+    @if $width-text == min-w {
+        @media only screen and (min-width: $width) {
+            @content;
+        }
+    }
+
+    @if $width-text == max-w {
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+/*
+    // breakpoints Example
+
+    @include breakpoints(xs){
+        ...
+    }
+
+    @include breakpoints(md){
+        ...
+    }
+    --------------------------------------------------
+
+    // customMediaQuery Example
+
+    @include customMediaQuery(600px, 1000px){
+        ...
+    }
+
+    --------------------------------------------------
+
+    // media Example
+
+    @include media(min-w, 600px){
+        ...
+    }
+
+    @include media(max-w, 900px){
+        ...
+    }
+
+    --------------------------------------------------
+
+*/

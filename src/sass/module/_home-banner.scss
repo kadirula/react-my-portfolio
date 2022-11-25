@@ -4,9 +4,22 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include breakpoints(sm){
+            flex-direction: column;
+        }
+    }
+    &__image{
+        @include media(max-w,991px){
+            display: none;
+        }
     }
     &__info{
         max-width: 600px;
+        @include breakpoints(xs){
+            text-align: center;
+            max-width: 100%;
+            padding: 0 30px;
+        }
     }
     &__title{
         font-size: 30px;

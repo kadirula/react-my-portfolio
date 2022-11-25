@@ -6,6 +6,7 @@ import BusinessUi3Image from '../assets/project/business-ui-3.png';
 
 const projectData = [
     {
+        id:1,
         image: BusinessUi1Image,
         tech: [
             { name: 'Html' },
@@ -14,9 +15,11 @@ const projectData = [
         ],
         title: 'Business UI - 1',
         liveUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        homeShow: true
     },
     {
+        id:2,
         image: MovieProjectImage,
         tech: [
             { name: 'React' },
@@ -24,9 +27,11 @@ const projectData = [
         ],
         title: 'TMDB Movie Project',
         liveUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        homeShow: true
     },
     {
+        id:3,
         image: BusinessUi2Image,
         tech: [
             { name: 'Html' },
@@ -35,9 +40,11 @@ const projectData = [
         ],
         title: 'Business UI - 2',
         liveUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        homeShow: true
     },
     {
+        id:4,
         image: FirebaseReactBlogAppImage,
         tech: [
             { name: 'React' },
@@ -45,9 +52,11 @@ const projectData = [
         ],
         title: 'Firebase React Blog App',
         liveUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        homeShow: true
     },
     {
+        id:5,
         image: BusinessUi3Image,
         tech: [
             { name: 'Html' },
@@ -56,7 +65,8 @@ const projectData = [
         ],
         title: 'Business UI - 3',
         liveUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        homeShow: true
     },
 ];
 

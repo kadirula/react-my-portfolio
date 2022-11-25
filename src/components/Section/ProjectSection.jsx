@@ -16,11 +16,17 @@ const ProjectSection = () => {
       </div>
       <div className="row">
         {
-          projectData.map((project, index) => (
-            <div className="col-md-4" key={index}>
-              <ProjectCard project={project} />
-            </div>
-          ))
+          projectData.map((project, index) => {
+            if (project.homeShow) {
+              return (
+                <div className="col-md-6 col-lg-4" key={project.id}>
+                  <ProjectCard project={project} />
+                </div>
+              )
+            }
+            return false
+
+          })
         }
 
       </div>

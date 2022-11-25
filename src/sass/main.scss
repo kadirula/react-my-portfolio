@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'breakpoints';
 
 @import 'base/reset';
 @import 'base/base';
@@ -14,5 +15,6 @@
 @import 'module/timeline';
 @import 'module/skill-card';
 @import 'module/social-box';
+@import 'module/search-form';
 
 @import 'state';

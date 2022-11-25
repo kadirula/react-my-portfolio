@@ -11,15 +11,27 @@
   ul, ol{
     list-style: none;
   }
-  
+ 
+  // html{
+  //   @include breakpoints(xs){
+  //     overflow-x: hidden !important; 
+  //   }
+  // }
   body {
     font-family: 'Poppins', sans-serif;
     color: $color-text;
     font-size: 16px;
+    background: url(../../assets/body-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    
   }
 
   .section{
     padding: 40px 0;
+    @include breakpoints(xs){
+      padding: 25px 0;
+    }
     &--border{
       border-top: 2px solid $color-theme;
     }

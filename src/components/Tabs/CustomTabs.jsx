@@ -2,7 +2,7 @@ import { useState } from "react";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import TabPanel from "./TabPanel";
-import TimeLine from "../TimeLine/TimeLine";
+import TimeLine from "../TimeLine";
 import SkillCard from "../SkillCard";
 import educations from '../../api/educationData';
 import workExperiences from '../../api/workExperienceData';
@@ -24,12 +24,15 @@ const CustomTabs = () => {
     return (
         <div className="tabs">
             <div className="tabs__filter">
-                <Tabs value={selectedTab} centered TabIndicatorProps={{
-                    style: {
-                        backgroundColor: "#FF014F"
-                    }
-                }} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="PROFESYONEL YETENEKLER" sx={{ minWidth: '33%' }} {...idGenerator(0)} />
+                <Tabs value={selectedTab}
+                    centered
+                    TabIndicatorProps={{
+                        style: { backgroundColor: "transparent" }
+                    }}
+                    aria-label="tabs example"
+                    onChange={handleChange}
+                >
+                    <Tab label="PROFESYONEL YETENEKLER" sx={{ xs: { minWidth: '100%' } }} {...idGenerator(0)} />
                     <Tab label="EĞİTİM" sx={{ minWidth: '33%' }} {...idGenerator(1)} />
                     <Tab label="İŞ DENEYİMİ" sx={{ minWidth: '33%' }} {...idGenerator(2)} />
                 </Tabs>

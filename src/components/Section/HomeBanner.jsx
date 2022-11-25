@@ -13,13 +13,13 @@ const HomeBanner = () => {
             Hello, I'm Kadir. I am developing myself on HTML5, CSS3 and JavaScript technologies. I have been dealing with web software for over 6 years. With the experience I have gained, I have the necessary knowledge and skills to make your projects successful.
           </p>
           <div className="social-box mt-4">
-            <a href='/' className="social-box__item">
+            <a href='https://www.linkedin.com/in/kadir-ula/' target='_blank' className="social-box__item">
               <FaLinkedinIn className='social-box__icon' />
             </a>
-            <a href='/' className="social-box__item">
+            <a href='https://github.com/kadirula' target='_blank' className="social-box__item">
               <FaGithub className='social-box__icon' />
             </a>
-            <a href='/' className="social-box__item">
+            <a href='https://medium.com/@kadirula17' target='_blank' className="social-box__item">
               <FaMediumM className='social-box__icon' />
             </a>
             <a href='/' className="social-box__item">
