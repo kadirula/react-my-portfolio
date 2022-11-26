@@ -21,8 +21,8 @@ const Footer = () => {
             <div className="row">
                 <div className="col-md-12">
                     <Heading
-                        title='BİRLİKTE ÇALIŞALIM'
-                        subTitle='Mail adresimden veya sosyal medya kanallarımdan benimle iletişime geçebilirsiniz'
+                        title={`LET'S WORK TOGETHER`}
+                        subTitle='You can reach me via my e-mail address or social media channels.'
                     />
                 </div>
             </div>
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
             <div className="row">
                 <p className="footer__copyright text-center">
-                    &copy; {new Date().getFullYear()} - Tüm Hakları <span>Kadir Ula</span> ' ya aittir.
+                    &copy; {new Date().getFullYear()} - All Rights Reserved by <span>Kadir Ula</span>
                 </p>
             </div>
         </footer>

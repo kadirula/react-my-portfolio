@@ -27,10 +27,10 @@ const Header = () => {
                 <div className="header__wrapper">
                     <nav className="header__menu header__menu--left">
                         <Link className='header__menu-item' activeClass="active" smooth spy to="home" duration={200}>
-                            <FaHome className='header__menu-icon' /> Anasayfa
+                            <FaHome className='header__menu-icon' /> Home
                         </Link>
                         <Link className='header__menu-item' activeClass="active" smooth spy to="project" duration={200}>
-                            <FaAtlas className='header__menu-icon' /> Projelerim
+                            <FaAtlas className='header__menu-icon' /> Project
                         </Link>
                     </nav>
                     <div className="header__logo">
@@ -40,10 +40,10 @@ const Header = () => {
                     </div>
                     <nav className="header__menu header__menu--right">
                         <Link className='header__menu-item' activeClass="active" smooth spy to="resume" duration={200}>
-                            <FaReadme className='header__menu-icon' /> Özgeçmişim
+                            <FaReadme className='header__menu-icon' /> Resume
                         </Link>
                         <Link className='header__menu-item' activeClass="active" smooth spy to="contact" duration={200}>
-                            <FaRegEnvelope className='header__menu-icon' /> İletişim
+                            <FaRegEnvelope className='header__menu-icon' /> Contact
                         </Link>
                     </nav>
 

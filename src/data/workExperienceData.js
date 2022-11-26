@@ -13,7 +13,7 @@ const workExperiences = [
     },
     {
         title: 'Arne Yazılım',
-        subtitle: 'Staj',
+        subtitle: 'Intern',
         date: '07/2018 - 10/2018',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
     }

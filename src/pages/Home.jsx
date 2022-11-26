@@ -14,6 +14,7 @@ const Home = () => {
       <section className='section' id="resume">
         <ResumeSection />
       </section>
+
     </>
   )
 }

@@ -5,16 +5,16 @@ const MobileMenu = ({ isMobile }) => {
     return (
         <div className={`header__mobile-menu ${isMobile ? 'show' : ''}`}>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="home" duration={200}>
-                Anasayfa
+                Home
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="project" duration={200}>
-                Projelerim
+                Resume
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="resume" duration={200}>
-                Özgeçmişim
+                Project
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="contact" duration={200}>
-                İletişim
+                Contact
             </Link>
         </div>
     )

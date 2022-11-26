@@ -32,9 +32,9 @@ const CustomTabs = () => {
                     aria-label="tabs example"
                     onChange={handleChange}
                 >
-                    <Tab label="PROFESYONEL YETENEKLER" sx={{ xs: { minWidth: '100%' } }} {...idGenerator(0)} />
-                    <Tab label="EĞİTİM" sx={{ minWidth: '33%' }} {...idGenerator(1)} />
-                    <Tab label="İŞ DENEYİMİ" sx={{ minWidth: '33%' }} {...idGenerator(2)} />
+                    <Tab label="SKILLS" sx={{ xs: { minWidth: '100%' } }} {...idGenerator(0)} />
+                    <Tab label="EDUCATION" sx={{ minWidth: '33%' }} {...idGenerator(1)} />
+                    <Tab label="WORK EXPERIENCE" sx={{ minWidth: '33%' }} {...idGenerator(2)} />
                 </Tabs>
             </div>
             <div className="tabs__panel">
