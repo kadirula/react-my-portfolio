@@ -24,9 +24,7 @@ const ProjectSection = () => {
     <>
       <div className="row mb-5">
         <div className="col-md-12">
-          <Link to='/project'>
-            <Heading title='PROJECTS' />
-          </Link>
+          <Heading title='PROJECTS' />
         </div>
       </div>
       <div className="row">
