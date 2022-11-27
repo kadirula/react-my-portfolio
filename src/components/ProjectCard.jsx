@@ -39,11 +39,11 @@ const ProjectCard = ({ project }) => {
                             ))
                         }
                     </div>
-                    <Link to='/' className="project-card__title">{project.title}</Link>
+                    <div className="project-card__title">{project.title}</div>
                 </div>
                 <div className="project-card__hover">
-                    <Link to={project.liveUrl} className="project-card__hover-item"><FaLink className="me-2" /> Live</Link>
-                    <Link to={project.githubUrl} className="project-card__hover-item"><FaGithub className="me-2" /> Github</Link>
+                    <a href={project.liveUrl} target='_blank' className="project-card__hover-item"><FaLink className="me-2" /> Live</a>
+                    <a href={project.githubUrl} target='_blank' className="project-card__hover-item"><FaGithub className="me-2" /> Github</a>
                 </div>
             </motion.div>
 
