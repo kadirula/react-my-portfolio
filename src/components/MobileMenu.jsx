@@ -8,10 +8,10 @@ const MobileMenu = ({ isMobile }) => {
                 Home
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="project" duration={200}>
-                Resume
+                Project
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="resume" duration={200}>
-                Project
+                Resume
             </Link>
             <Link className='header__mobile-menu-item' activeClass="active" smooth spy to="contact" duration={200}>
                 Contact
