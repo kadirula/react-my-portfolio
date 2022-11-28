@@ -16,9 +16,9 @@ const HomeBanner = () => {
     }
   }
   const socialItemAnimate = {
-    offscreen: { x: 30, opacity: 0 },
+    offscreen: { y: 30, opacity: 0 },
     onscreen: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
         type: "spring",
