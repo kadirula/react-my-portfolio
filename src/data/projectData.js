@@ -29,7 +29,7 @@ const projectData = [
         ],
         title: 'TMDB Movie',
         liveUrl: 'https://react-tmdb-movie-app-v1.netlify.app/',
-        githubUrl: 'https://github.com/kadirula/react-tmdb-movie-app',
+        githubUrl: 'https://github.com/kadirula/react-movie-app-tmdb',
         homeShow: true
     },
     {
