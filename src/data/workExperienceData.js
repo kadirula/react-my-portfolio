@@ -1,5 +1,17 @@
 const workExperiences = [
     {
+        title: 'Livasoft Yazılım A.Ş',
+        subtitle: 'Frontend Developer',
+        date: '10/2023 - Continue',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
+    },
+    {
+        title: 'Limonist Meta Teknoloji A.Ş',
+        subtitle: 'Frontend Developer',
+        date: '01/2023 - 10/2023',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi, sequi earum aut voluptates dolor!'
+    },
+    {
         title: 'Daynex İnternet Teknolojileri A.Ş.',
         subtitle: 'Frontend Developer',
         date: '07/2021 - 02/2022',
